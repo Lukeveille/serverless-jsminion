@@ -409,6 +409,9 @@ input:focus {
 .transparent {
   opacity: .5;
 }
+.outline {
+  outline: 1px solid #aaafb2;
+}
 .spaced {
   margin: .5rem;
 }
