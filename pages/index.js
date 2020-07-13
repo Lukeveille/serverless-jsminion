@@ -7,7 +7,7 @@ export default () => {
   const [user, setUser] = useState(false);
   
   return (
-    <Layout user={user}>
+    <Layout user={user} setUser={setUser}>
       {user? <MainMenu /> : <Login setUser={setUser}/>}
     </Layout>
   )

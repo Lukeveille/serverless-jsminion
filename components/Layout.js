@@ -3,32 +3,39 @@ import { useState } from 'react';
 
 const siteTitle = 'Digital Dominion';
 
-export default ({ children, user }) => {
+export default ({ children, user, setUser }) => {
   const [showLogout, setShowLogout] = useState(false);
 
   console.log(user)
 
   return (
     <div
-      className="main-screen"
       onClick={() => { setShowLogout(false) }}
+      className="main-screen"
     >
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>Digital Dominion</title>
+        <title>{siteTitle}</title>
         <meta name="og:title" content={siteTitle} />
         <meta
           name="description"
           content="A digitized version of Dominion built in Javascript"
         />
       </Head>
-      <div
-        className="x-close-button"
+      {user? <div
+        className={`x-close-button${showLogout? ' active-red' : ''}`}
         onClick={e => {
           e.stopPropagation();
           setShowLogout(!showLogout);
         }}
-      >x</div>
+      >x</div> : ''}
+      {showLogout? <div className="logout-window">
+        <div>Logged in as {user}</div>
+        <div
+          className="logout-button"
+          onClick={() => { setUser(false) }}
+        >Log Out</div>
+      </div> : ''}
       <div>{children}</div>
     </div>
   )

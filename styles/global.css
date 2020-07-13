@@ -14,6 +14,9 @@ body {
 p, h1, h2, h3, h4, h5 {
   margin: 0;
 }
+h3 {
+  font-weight: 200;
+}
 
 .App {
   z-index: 1000;
@@ -316,11 +319,46 @@ p, h1, h2, h3, h4, h5 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
-}
-.main-screen .game-button {
+  height: 95vh;
   margin: .5rem;
+}
+.username-input {
+  width: 25rem;
+  height: 2.5rem;
+  margin: 1rem;
+  padding: .25rem;
+  background-color: #1e2e36;
+  border: 1px solid #aaafb2;
+  color: #fa9a6a;
+  text-align: center;
+  font-size: 1rem;
+  font-family: RobotoSlab;
+  caret-color: #1e2e36;
+}
+input:focus {
+  outline: none;
+}
+.logout-window {
+  background-color: #121c21;
+  display: inline-block;
+  position: absolute;
+  top: .5rem;
+  right: 2.25rem;
+  font-size: .8rem;
+  padding: .5rem;
+}
+.logout-button:hover {
+  color: #aaafb2;
+  outline: 1px solid #aaafb2;
+  background-color: #121c21;
+}
+.logout-button {
+  background-color: #f06970;
+  color: #121c21;
+  display: inline-block;
+  margin-top: .8rem;
+  padding: .2rem .5rem;
+  cursor: pointer;
 }
 
 .red {
@@ -371,9 +409,15 @@ p, h1, h2, h3, h4, h5 {
 .transparent {
   opacity: .5;
 }
+.spaced {
+  margin: .5rem;
+}
 .spacer {
   display: inline-block;
   height: 12px;
+}
+.center {
+  margin: auto;
 }
 
 /* Modals */
@@ -418,6 +462,10 @@ p, h1, h2, h3, h4, h5 {
   font-weight: 500;
   background-color: #121c21;
   padding: .3rem .5rem;
+}
+.active-red {
+  background-color: #f06970;
+  color: #121c21;
 }
 
 @media screen and (max-width: 1275px) {
