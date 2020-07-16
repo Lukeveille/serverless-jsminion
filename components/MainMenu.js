@@ -2,11 +2,9 @@ import Link from 'next/link';
 
 export default () => (
   <div>
-    <Link href="/game/xyz">
-      <div className="game-button active spaced">
-        Play Game
-      </div>
-    </Link>
+    <div className="game-button active spaced">
+      Play Game
+    </div>
     <Link href="/deck-builder">
       <div className="game-button active spaced">
         Deck Builder

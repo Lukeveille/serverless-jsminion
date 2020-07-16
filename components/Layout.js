@@ -6,8 +6,6 @@ const siteTitle = 'Digital Dominion';
 export default ({ children, user, setUser }) => {
   const [showLogout, setShowLogout] = useState(false);
 
-  console.log(user)
-
   return (
     <div
       onClick={() => { setShowLogout(false) }}
