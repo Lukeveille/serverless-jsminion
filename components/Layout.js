@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const siteTitle = 'Digital Dominion';
@@ -21,14 +22,24 @@ export default ({ children, user, setUser }) => {
         />
       </Head>
       {user? <div
-        className={`x-close-button${showLogout? ' active-red' : ''}`}
+        className={`burger${showLogout? ' active-red change' : ''}`}
         onClick={e => {
           e.stopPropagation();
           setShowLogout(!showLogout);
         }}
-      >x</div> : ''}
+      >
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+      </div> : ''}
       {showLogout? <div className="logout-window">
         <div>Logged in as {user}</div>
+        <Link href="/stats">
+          <div className="logout-button">
+            Stats
+          </div>
+        </Link>
+        <br />
         <div
           className="logout-button"
           onClick={() => { setUser(false) }}
