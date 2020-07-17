@@ -12,7 +12,7 @@ export default ({ children, user, setUser, inputRef }) => {
       className="main-screen"
       onClick={() => {
         setShowLogout(false);
-        if (inputRef.current) inputRef.current.focus();
+        if (inputRef && inputRef.current) inputRef.current.focus();
       }}
     >
       <Head>

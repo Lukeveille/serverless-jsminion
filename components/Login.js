@@ -3,7 +3,6 @@ import styles from '../styles/login.module.css'
 
 export default ({setUser, inputRef}) => {
   const [userLogin, setUserLogin] = useState('');
-  // const inputRef = useRef(null)
 
   useEffect(() => {
     inputRef.current.focus();

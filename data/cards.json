@@ -1,0 +1,162 @@
+{
+  "victory": [
+    {
+      "name": "Estate",
+      "cost": 2,
+      "victory": 1,
+      "type": "Victory"
+    },
+    {
+      "name": "Duchy",
+      "cost": 5,
+      "victory": 3,
+      "type": "Victory"
+    },
+    {
+      "name": "Province",
+      "cost": 8,
+      "victory": 6,
+      "type": "Victory"
+    },
+    {
+      "name": "Curse",
+      "cost": 0,
+      "victory": -1,
+      "type": "Victory"
+    }
+  ],
+  "treasure": [
+    {
+      "name": "Copper",
+      "cost": 0,
+      "treasure": 1,
+      "type": "Treasure"
+    },
+    {
+      "name": "Silver",
+      "cost": 3,
+      "treasure": 2,
+      "type": "Treasure"
+    },
+    {
+      "name": "Gold",
+      "cost": 6,
+      "treasure": 3,
+      "type": "Treasure"
+    }
+  ],
+  "action": [
+    
+    {
+      "name": "Village",
+      "cost": 3,
+      "actions": 2,
+      "cards": 1,
+      "type": "Action"
+    },
+    {
+      "name": "Smithy",
+      "cost": 4,
+      "cards": 3,
+      "type": "Action"
+    },
+    {
+      "name": "Market",
+      "cost": 5,
+      "actions": 1,
+      "cards": 1,
+      "buys": 1,
+      "treasure": 1,
+      "type": "Action"
+    },
+    {
+      "name": "Festival",
+      "cost": 5,
+      "actions": 2,
+      "buys": 1,
+      "treasures": 2,
+      "type": "Action"
+    },
+    {
+      "name": "Laboratory",
+      "cost": 5,
+      "cards": 2,
+      "actions": 1,
+      "type": "Action"
+    },
+    {
+      "name": "Chapel",
+      "cost": 2,
+      "instructions": "Trash up to 4 cards from your hand.",
+      "discardTrash": "trash 4|up-to",
+      "type": "Action"
+    },
+    {
+      "name": "Cellar",
+      "cost": 2,
+      "actions": 1,
+      "instructions": "Discard any number of cards, then draw that many.",
+      "discardTrash": "discard any draw",
+      "type": "Action"
+    },
+    {
+      "name": "Remodel",
+      "cost": 4,
+      "instructions": "Trash a card from your hand. Gain a card costing up to coin-2 more than it.",
+      "discardTrash": "trash 1 supply",
+      "supply": "discardTrash 2",
+      "type": "Action"
+    },
+    {
+      "name": "Mine",
+      "cost": 5,
+      "instructions": "You may trash a Treasure from your hand. Gain a Treasure to your hand costing up to coin-3 more than it.",
+      "discardTrash": "trash 1 supply Treasure",
+      "supply": "discardTrash 3 hand",
+      "type": "Action"
+    },
+    {
+      "name": "Moneylender",
+      "cost": 4,
+      "treasure": 3,
+      "instructions": "You may trash a Copper from your hand for +coin-3",
+      "discardTrash": "trash 1 auto Copper",
+      "type": "Action",
+      "hidden": "treasure"
+    },
+    {
+      "name": "Vassal",
+      "cost": 3,
+      "treasure": 2,
+      "instructions": "Discard the top card of your deck. If it's an Action card, you may play it.",
+      "discardTrash": "discard 1|deck auto",
+      "deck": "Action [0] modal",
+      "type": "Action"
+    },
+    {
+      "name": "Workshop",
+      "cost": 3,
+      "instructions": "Gain a card costing up to coin-4",
+      "supply": "gain 4",
+      "type": "Action"
+    },
+    {
+      "name": "Harbinger",
+      "cost": 3,
+      "cards": 1,
+      "actions": 1,
+      "instructions": "Look through your discard pile. You may put a card from it onto your deck.",
+      "discard": "modal 1|deck",
+      "type": "Action"
+    },
+    {
+      "name": "Merchant",
+      "cost": 3,
+      "cards": 1,
+      "actions": 1,
+      "instructions": "The first time you play a Silver this turn, +coin-1",
+      "playMod": "coinMod 1|1 0 Silver",
+      "type": "Action"
+    }
+  ]
+}
