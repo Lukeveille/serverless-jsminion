@@ -1,9 +1,9 @@
 import Layout from '../components/Layout';
-import MainMenu from '../components/MainMenu';
+import Lobby from '../components/Lobby';
 import Login from '../components/Login';
 
 export default ({user, setUser}) => (
   <Layout user={user} setUser={setUser}>
-    {user? <MainMenu /> : <Login setUser={setUser}/>}
+    {user? <Lobby /> : <Login setUser={setUser}/>}
   </Layout>
 )

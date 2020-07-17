@@ -1,0 +1,14 @@
+.button:hover {
+  outline: 1px solid #f06970;
+}
+.button {
+  cursor: pointer;
+  height: 1.775rem;
+  display: flex;
+  width: 12.5rem;
+  background-color: #121c21;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 14px;
+  margin: .5rem;
+}

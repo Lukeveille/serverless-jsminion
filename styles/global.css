@@ -322,19 +322,7 @@ h3 {
   height: 95vh;
   margin: .5rem;
 }
-.username-input {
-  width: 25rem;
-  height: 2.5rem;
-  margin: 1rem;
-  padding: .25rem;
-  background-color: #1e2e36;
-  border: 1px solid #aaafb2;
-  color: #fa9a6a;
-  text-align: center;
-  font-size: 1rem;
-  font-family: RobotoSlab;
-  caret-color: #1e2e36;
-}
+
 input:focus {
   outline: none;
 }
@@ -368,7 +356,7 @@ input:focus {
   top: .5rem;
   right: .5rem;
   padding: 0 6px;
-  transition: 0.4s;
+  background-color: #121c21;
 }
 .burger:hover {
   background-color: #f06970;
@@ -383,7 +371,7 @@ input:focus {
   height: 2.5px;
   background-color: #aaafb2;
   margin: 3px 0;
-  transition: 0.4s;
+  transition: transform 0.4s;
 }
 .change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-4.5px, 3px);

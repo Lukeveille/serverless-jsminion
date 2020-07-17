@@ -1,3 +1,7 @@
-export default (data) => {
-  return <div>A Game</div>
-}
+import Layout from '../../components/Layout';
+
+export default ({user, setUser}) => (
+  <Layout user={user} setUser={setUser}>
+    <div>A Game</div>
+  </Layout>
+)

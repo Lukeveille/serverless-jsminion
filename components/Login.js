@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../styles/login.module.css'
 
 export default ({setUser}) => {
   const [userLogin, setUserLogin] = useState('');
@@ -12,8 +13,8 @@ export default ({setUser}) => {
     >
       <h3>Enter a Username</h3>
       <input
-        className="username-input"
-        value={userLogin}  
+        className={styles['username-input']}
+        value={userLogin}
         onChange={e => {
           if (e.target.value.length < 15) {
             setUserLogin(e.target.value);
@@ -26,7 +27,7 @@ export default ({setUser}) => {
         }}
       />
       <div
-        className={`center game-button${userLogin? ' outline active' : ''}`}
+        className={`${styles.button} ${userLogin? styles.active : ''}`}
         onClick={() => setUser(userLogin)}
       >Submit</div>
     </form>
