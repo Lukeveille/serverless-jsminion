@@ -1,8 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from '../styles/login.module.css'
 
-export default ({setUser}) => {
+export default ({setUser, inputRef}) => {
   const [userLogin, setUserLogin] = useState('');
+  // const inputRef = useRef(null)
+
+  useEffect(() => {
+    inputRef.current.focus();
+  })
 
   return (
     <form
@@ -13,6 +18,7 @@ export default ({setUser}) => {
     >
       <h3>Enter a Username</h3>
       <input
+        ref={inputRef}
         className={styles['username-input']}
         value={userLogin}
         onChange={e => {

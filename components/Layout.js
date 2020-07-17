@@ -4,13 +4,16 @@ import { useState } from 'react';
 
 const siteTitle = 'Digital Dominion';
 
-export default ({ children, user, setUser }) => {
+export default ({ children, user, setUser, inputRef }) => {
   const [showLogout, setShowLogout] = useState(false);
 
   return (
     <div
-      onClick={() => { setShowLogout(false) }}
       className="main-screen"
+      onClick={() => {
+        setShowLogout(false);
+        if (inputRef.current) inputRef.current.focus();
+      }}
     >
       <Head>
         <link rel="icon" href="/favicon.ico" />

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
 import styles from '../styles/lobby.module.css'
 
+
 export default () => {
   const newGameId = uuidv4().slice(0, 8);
 
