@@ -3,12 +3,50 @@
 }
 .button {
   cursor: pointer;
-  height: 1.775rem;
+  height: 2.4rem;
   display: flex;
-  width: 12.5rem;
   background-color: #121c21;
   align-items: center;
   justify-content: space-around;
   font-size: 14px;
-  margin: .5rem;
+  margin: .4rem;
 }
+.short {
+  width: 10rem;
+  /* display: inline-block; */
+  align-items: center;
+}
+.long {
+  width: 20.8rem;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.table {
+  margin: .4rem;
+  padding: .5rem;
+  background-color: #1c272d;
+  /* display: flex;
+  align-items: flex-start; */
+}
+.lobby-screen {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.2fr;
+  font-size: 14px;
+  margin: 5rem;
+}
+.lobby-full {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 20.8rem;
+}
+.lobby {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.lobby-full {
+  margin-left: .8rem;
+}
+/* .players {
+  height: 80vh
+} */

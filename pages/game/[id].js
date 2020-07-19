@@ -65,14 +65,6 @@ export default () => {
     setGameState({...gameState, turn: 1})
   },
   [menuScreen, setMenuScreen] = useState(null);
-  // [menuScreen, setMenuScreen] = useState(
-  //   <StartScreen
-  //     onClick={startGame}
-  //     phaseTitle={"Let's Play"}
-  //     start={true}
-  //     button={'Start Game'}
-  //   />
-  // );
   let turnObject = {
     gameState,
     hand: [...hand],
