@@ -1,15 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import styles from '../styles/layout.module.css'
 
-const siteTitle = 'Digital Dominion';
-
-export default ({ children, user, setUser, inputRef }) => {
+export default ({ children, user, setUser, inputRef, setLobby }) => {
+  const siteTitle = 'Digital Dominion';
   const [showLogout, setShowLogout] = useState(false);
 
   return (
     <div
-      className="main-screen"
+      className={styles['main-screen']}
       onClick={() => {
         setShowLogout(false);
         if (inputRef && inputRef.current) inputRef.current.focus();
@@ -25,30 +25,33 @@ export default ({ children, user, setUser, inputRef }) => {
         />
       </Head>
       {user? <div
-        className={`burger${showLogout? ' active-red change' : ''}`}
+        className={`${styles.burger}${showLogout? ` ${styles['active-red']} ${styles.change}` : ''}`}
         onClick={e => {
           e.stopPropagation();
           setShowLogout(!showLogout);
         }}
       >
-          <div className="bar1"></div>
-          <div className="bar2"></div>
-          <div className="bar3"></div>
+          <div className={styles.bar1}></div>
+          <div className={styles.bar2}></div>
+          <div className={styles.bar3}></div>
       </div> : ''}
-      {showLogout? <div className="logout-window">
+      {showLogout? <div className={styles['logout-window']}>
         <div>Logged in as {user}</div>
         <Link href="/stats">
-          <div className="logout-button">
+          <div className={styles['logout-button']}>
             Stats
           </div>
         </Link>
         <br />
         <div
-          className="logout-button"
-          onClick={() => { setUser(false) }}
+          className={styles['logout-button']}
+          onClick={() => {
+            setUser(false);
+            setLobby(false);
+          }}
         >Log Out</div>
       </div> : ''}
-      <div>{children}</div>
+      {children}
     </div>
   )
 }

@@ -11,42 +11,47 @@
   font-size: 14px;
   margin: .4rem;
 }
-.short {
-  width: 10rem;
-  /* display: inline-block; */
-  align-items: center;
-}
-.long {
-  width: 20.8rem;
-  grid-column-start: 1;
-  grid-column-end: 3;
+.button-box {
+  margin: .4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .table {
-  margin: .4rem;
-  padding: .5rem;
+  margin: .8rem;
+  margin-bottom: 0;
+  padding: 1rem .5rem;
   background-color: #1c272d;
-  /* display: flex;
-  align-items: flex-start; */
+  display: inline-block;
 }
 .lobby-screen {
   text-align: left;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1.2fr;
   font-size: 14px;
   margin: 5rem;
+  height: 100%;
+  width: 80%;
+  display: flex;
 }
-.lobby-full {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 20.8rem;
+.players {
+  height: 75vh;
 }
 .lobby {
+  height: 35vh;
   grid-column-start: 1;
   grid-column-end: 3;
 }
-.lobby-full {
-  margin-left: .8rem;
+.short {
+  width: 9.3rem;
 }
-/* .players {
-  height: 80vh
-} */
+.long {
+  width: 19.4rem;
+  margin: .4rem .8rem;
+}
+.inline {
+  display: inline-block;
+}
+.spaced {
+  padding-right: 3rem;
+}
+.double-spaced {
+  padding-right: 6rem;
+}

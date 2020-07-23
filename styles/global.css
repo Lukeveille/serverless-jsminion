@@ -17,6 +17,12 @@ p, h1, h2, h3, h4, h5 {
 h3 {
   font-weight: 200;
 }
+hr {
+  border: none;
+  height: 1px;
+  background-color: #666;
+  min-width: 100%;
+}
 
 .App {
   z-index: 1000;
@@ -314,71 +320,9 @@ h3 {
   padding-left: .01rem;
   text-align: center;
 }
-/* .main-screen {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
 
 input:focus {
   outline: none;
-}
-.logout-window {
-  background-color: #121c21;
-  display: inline-block;
-  position: absolute;
-  top: 2rem;
-  right: .5rem;
-  font-size: .8rem;
-  padding: .5rem;
-}
-.logout-button:hover {
-  color: #aaafb2;
-  outline: 1px solid #aaafb2;
-  background-color: #121c21;
-}
-.logout-button {
-  background-color: #f06970;
-  color: #121c21;
-  display: inline-block;
-  margin-top: .8rem;
-  padding: .2rem .5rem;
-  cursor: pointer;
-}
-
-.burger {
-  display: inline-block;
-  cursor: pointer;
-  position: absolute;
-  top: .5rem;
-  right: .5rem;
-  padding: 0 6px;
-  background-color: #121c21;
-}
-.burger:hover {
-  background-color: #f06970;
-}
-.burger:hover .bar1, 
-.burger:hover .bar2, 
-.burger:hover .bar3 {
-  background-color: #121c21;
-}
-.bar1, .bar2, .bar3 {
-  width: 17.5px;
-  height: 2.5px;
-  background-color: #aaafb2;
-  margin: 3px 0;
-  transition: transform 0.4s;
-}
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-4.5px, 3px);
-  transform: rotate(-45deg) translate(-4.5px, 3px);
-  background-color: #121c21
-}
-.change .bar2 {opacity: 0;}
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-4px, -4px);
-  transform: rotate(45deg) translate(-4px, -4px);
-  background-color: #121c21
 }
 
 .red {
@@ -485,10 +429,6 @@ input:focus {
   font-weight: 500;
   background-color: #121c21;
   padding: .3rem .5rem;
-}
-.active-red {
-  background-color: #f06970;
-  color: #121c21;
 }
 
 @media screen and (max-width: 1275px) {
