@@ -67,7 +67,7 @@ export default props => {
             <div
               className={`${props.card.type === 'Action'? 'action' : 'card'}-image`}
               style={{
-                backgroundImage: `url(${props.card.path})`
+                backgroundImage: `url(/media/${props.card.name}.jpg)`
               }}
             />
             {props.card.type === 'Action'? <div className="card-instructions">
