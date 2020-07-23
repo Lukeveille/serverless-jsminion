@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import { startingCards, supplies, standardGame } from '../../data/cardSets';
 import { generateLog, spacer } from '../../lib/printLog';
@@ -52,7 +51,7 @@ export default () => {
     setVictoryPoints(countValue(startingDeck, 'victory'));
     setHand(startingDeck.splice(0, 5));
     setDeck(startingDeck);
-    setSupply(supplies);
+    setSupply(supplies(standardGame));
     setDiscard([]);
     setInPlay([]);
     setLogs([]);
@@ -64,7 +63,14 @@ export default () => {
     setBuys(0);
     setGameState({...gameState, turn: 1})
   },
-  [menuScreen, setMenuScreen] = useState(null);
+  [menuScreen, setMenuScreen] = useState(
+    <StartScreen
+      onClick={startGame}
+      phaseTitle={"Let's Play"}
+      start={true}
+      button={'Start Game'}
+    />
+  );
   let turnObject = {
     gameState,
     hand: [...hand],
@@ -272,18 +278,20 @@ export default () => {
     setPlayMod(turnObject.playMod);
   };
 
-  // window.onkeydown = e => {
-  //   if (e.keyCode === 18) {
-  //     setAltKey(true);
-  //   } else if (e.keyCode === 27) {
-  //     setShowModal(false);
-  //   } else if (e.keyCode === 13) {
-  //     if (menuScreen && gameState.turn === 0) startGame();
-  //   };
-  // };
-  // window.onkeyup = e => {
-  //   if (e.keyCode === 18) setAltKey(false);
-  // };
+  if (process.browser) {
+    window.onkeydown = e => {
+      if (e.keyCode === 18) {
+        setAltKey(true);
+      } else if (e.keyCode === 27) {
+        setShowModal(false);
+      } else if (e.keyCode === 13) {
+        if (menuScreen && gameState.turn === 0) startGame();
+      };
+    };
+    window.onkeyup = e => {
+      if (e.keyCode === 18) setAltKey(false);
+    };
+  }
 
   return (
     <div className="App">
