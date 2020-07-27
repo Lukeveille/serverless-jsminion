@@ -2,11 +2,13 @@ import React from 'react';
 import { useEffect } from 'react';
 
 export default props => {
-  // const logSticker = document.getElementById('log-sticker');
-
-  // useEffect(() => {
-  //   if (logSticker) logSticker.scrollIntoView();
-  // }, [props.logs, logSticker]);
+  if (process.browser) {
+    const logSticker = document.getElementById('log-sticker');
+  
+    useEffect(() => {
+      if (logSticker) logSticker.scrollIntoView();
+    }, [props.logs, logSticker]);
+  }
 
   return (
     <div className="logs">
