@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
 import styles from '../styles/lobby.module.css'
 
-export default ({lobby, setLobby}) => {
+export default ({lobby, setLobby, playGame}) => {
   const newGameId = uuidv4().slice(0, 8);
 
   return (
@@ -42,16 +42,18 @@ export default ({lobby, setLobby}) => {
           </Link>
           <div 
             className={`${styles.button} ${styles.short}`}
-            onClick={() => setLobby(!lobby)}
+            onClick={() => setLobby(lobby? false : newGameId)}
           >
             {lobby? 'Leave' : 'Create'} Lobby
           </div>
         </div>
-        {lobby? <Link href={`/game/${newGameId}`}>
-            <div className={`${styles.button} ${styles.long}`}>
-              Start Game
-            </div>
-          </Link> : ''}
+        {lobby? 
+          <div
+            className={`${styles.button} ${styles.long}`}
+            onClick={() => playGame()}
+          >
+            Start Game
+          </div> : ''}
       </div>
     </div>
   )

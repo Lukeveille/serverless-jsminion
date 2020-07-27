@@ -1,5 +1,6 @@
+import fs from 'fs'
 import { useState } from 'react';
-import { startingCards, supplies, standardGame } from '../../data/cardSets';
+import { startingCards, supplies } from '../../lib/cardSets';
 import { generateLog, spacer } from '../../lib/printLog';
 import printLog from '../../lib/printLog';
 import cleanup from '../../lib/cleanup';
@@ -21,7 +22,7 @@ import Modal from '../../components/Modal';
 import CurrentModal from '../../components/CurrentModal';
 import StartScreen from '../../components/StartScreen';
 
-export default () => {
+export default ({ cards, gameDeck }) => {
   const player = 1,
   [phase, setPhase] = useState(),
   [showModal, setShowModal] = useState(false),
@@ -47,11 +48,11 @@ export default () => {
   [emptySupply, setEmptySupply] = useState(),
   [victoryPoints, setVictoryPoints] = useState(),
   startGame = () => {
-    const startingDeck = shuffle(startingCards());
+    const startingDeck = shuffle(startingCards(cards));
     setVictoryPoints(countValue(startingDeck, 'victory'));
     setHand(startingDeck.splice(0, 5));
     setDeck(startingDeck);
-    setSupply(supplies(standardGame));
+    setSupply(supplies(cards, gameDeck));
     setDiscard([]);
     setInPlay([]);
     setLogs([]);
@@ -372,3 +373,23 @@ export default () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  return {
+    props: {
+      cards: JSON.parse(fs.readFileSync(`${process.cwd()}/data/cards.json`)),
+      gameDeck: [
+        'Village',
+        'Market',
+        'Cellar',
+        'Remodel',
+        'Mine',
+        'Moneylender',
+        'Vassal',
+        'Workshop',
+        'Harbinger',
+        'Merchant',
+      ]
+    }
+  }
+}
